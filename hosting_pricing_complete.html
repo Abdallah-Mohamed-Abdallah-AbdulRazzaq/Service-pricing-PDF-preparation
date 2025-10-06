@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل أسعار الخدمات الشامل</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px 15px;
+            line-height: 1.8;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            font-weight: 900;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 25px;
+            border-radius: 12px;
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .subsection-title {
+            color: #667eea;
+            font-size: 1.4em;
+            font-weight: 700;
+            margin: 30px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .price-table thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .price-table th {
+            padding: 18px 15px;
+            text-align: right;
+            font-weight: 700;
+            font-size: 1.1em;
+        }
+        
+        .price-table td {
+            padding: 15px;
+            text-align: right;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .price-table tbody tr:hover {
+            background: #f8f9ff;
+        }
+        
+        .price-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            display: inline-block;
+            font-size: 1.1em;
+        }
+        
+        .scenario-box {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8ebff 100%);
+            border: 2px solid #667eea;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        
+        .scenario-title {
+            color: #667eea;
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .scenario-item {
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed #ccc;
+        }
+        
+        .scenario-item:last-child {
+            border-bottom: none;
+            padding-top: 15px;
+            margin-top: 10px;
+            border-top: 2px solid #667eea;
+        }
+        
+        .total-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        .total-box h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        
+        .total-amount {
+            font-size: 3em;
+            font-weight: 900;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+        
+        .badge-new {
+            background: #10b981;
+            color: white;
+        }
+        
+        .badge-popular {
+            background: #f59e0b;
+            color: white;
+        }
+        
+        .badge-premium {
+            background: #8b5cf6;
+            color: white;
+        }
+        
+        .info-box {
+            background: #fef3c7;
+            border-right: 4px solid #f59e0b;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding-right: 20px;
+        }
+        
+        .feature-list li {
+            padding: 8px 0;
+            position: relative;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            color: #10b981;
+            font-weight: bold;
+            position: absolute;
+            right: -20px;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+            }
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .comparison-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s;
+        }
+        
+        .comparison-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .print-btn {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: 700;
+            cursor: pointer;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+        }
+        
+        .print-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+        
+        @media print {
+            .print-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 دليل أسعار الخدمات الشامل</h1>
+            <p>جميع السيناريوهات والاحتمالات - Namecheap & Agora.io</p>
+        </div>
+        
+        <div class="content">
+            
+            <!-- VPS Hosting Section -->
+            <div class="section">
+                <div class="section-title">🖥️ استضافة VPS - الخادم الافتراضي الخاص</div>
+                
+                <div class="subsection-title">الباقات الأساسية</div>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>الباقة</th>
+                            <th>المميزات</th>
+                            <th>السعر الشهري</th>
+                            <th>السعر السنوي</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge badge-new">أساسية</span> VPS Basic</td>
+                            <td>مناسبة للمشاريع الصغيرة</td>
+                            <td><span class="price-tag">$9.88</span></td>
+                            <td><span class="price-tag">$82.56</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-popular">متوسطة</span> VPS Standard</td>
+                            <td>للمشاريع المتنامية</td>
+                            <td><span class="price-tag">$15.88</span></td>
+                            <td><span class="price-tag">$154.56</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-premium">متقدمة</span> VPS Advanced</td>
+                            <td>لمشاريع عالية الأداء</td>
+                            <td><span class="price-tag">$28.88</span></td>
+                            <td><span class="price-tag">$298.56</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="subsection-title">لوحات التحكم</div>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>لوحة التحكم</th>
+                            <th>الوصف</th>
+                            <th>السعر الشهري</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Webuzo</td>
+                            <td>لوحة تحكم بسيطة وفعالة</td>
+                            <td><span class="price-tag">$2.88</span></td>
+                        </tr>
+                        <tr>
+                            <td>cPanel</td>
+                            <td>لوحة التحكم الأشهر عالمياً</td>
+                            <td><span class="price-tag">$16.88</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="subsection-title">الإضافات والموارد الإضافية</div>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>الإضافة</th>
+                            <th>الكمية</th>
+                            <th>السعر الشهري</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ذاكرة RAM إضافية</td>
+                            <td>1024 MB (1 GB)</td>
+                            <td><span class="price-tag">$7.00</span></td>
+                        </tr>
+                        <tr>
+                            <td>مساحة تخزين إضافية</td>
+                            <td>10 GB</td>
+                            <td><span class="price-tag">$3.00</span></td>
+                        </tr>
+                        <tr>
+                            <td>نطاق ترددي إضافي</td>
+                            <td>100 GB</td>
+                            <td><span class="price-tag">$10.00</span></td>
+                        </tr>
+                        <tr>
+                            <td>عنوان IP مخصص إضافي</td>
+                            <td>عنوان واحد</td>
+                            <td><span class="price-tag">$4.00</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="subsection-title">خيارات الإدارة</div>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>نوع الإدارة</th>
+                            <th>الوصف</th>
+                            <th>السعر الشهري</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>إدارة ذاتية</td>
+                            <td>أنت المسؤول عن كل شيء</td>
+                            <td><span class="price-tag">مجاناً</span></td>
+                        </tr>
+                        <tr>
+                            <td>إدارة أساسية</td>
+                            <td>استجابة استباقية للأعطال</td>
+                            <td>السعر غير محدد</td>
+                        </tr>
+                        <tr>
+                            <td>إدارة كاملة</td>
+                            <td>إدارة شاملة من Namecheap</td>
+                            <td>السعر غير محدد</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="info-box">
+                    <strong>⏰ ضمان استرداد الأموال:</strong> 30 يوماً للعملاء الجدد | نقل مجاني للموقع من cPanel إلى cPanel
+                </div>
+            </div>
+            
+            <!-- Dedicated Servers Section -->
+            <div class="section">
+                <div class="section-title">🔥 الخوادم المخصصة - Dedicated Servers</div>
+                
+                <div class="subsection-title">الباقات المتاحة</div>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>نوع الخادم</th>
+                            <th>المواصفات الرئيسية</th>
+                            <th>السعر الشهري</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge badge-new">أساسي</span> Basic Server</td>
+                            <td>للمشاريع الصغيرة والمتوسطة</td>
+                            <td><span class="price-tag">$44.88</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-popular">قياسي</span> Standard Server</td>
+                            <td>أداء متوازن وموارد جيدة</td>
+                            <td><span class="price-tag">~$100-150</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-premium">متقدم</span> Advanced Server</td>
+                            <td>Dual Xeon Gold + 128GB RAM + NVMe</td>
+                            <td><span class="price-tag">$290.88</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="subsection-title">لوحات التحكم للخوادم المخصصة</div>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>لوحة التحكم</th>
+                            <th>متوافقة مع</th>
+                            <th>السعر الشهري</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Webuzo</td>
+                            <td>AlmaLinux, Ubuntu, CloudLinux</td>
+                            <td><span class="price-tag">$5.88</span></td>
+                        </tr>
+                        <tr>
+                            <td>cPanel/WHM</td>
+                            <td>CloudLinux, AlmaLinux, Ubuntu</td>
+                            <td><span class="price-tag">$17.88</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="subsection-title">خيارات الإدارة للخوادم المخصصة</div>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>نوع الإدارة</th>
+                            <th>المميزات</th>
+                            <th>السعر الشهري</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>إدارة ذاتية</td>
+                            <td>كامل التحكم والمسؤولية</td>
+                            <td><span class="price-tag">مجاناً</span></td>
+                        </tr>
+                        <tr>
+                            <td>إدارة أساسية</td>
+                            <td>مراقبة ودعم أساسي</td>
+                            <td><span class="price-tag">$20.00</span></td>
+                        </tr>
+                        <tr>
+                            <td>إدارة كاملة</td>
+                            <td>نسخ احتياطي أسبوعي + تحسينات أمنية + مراقبة</td>
+                            <td><span class="price-tag">$50.00</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="info-box">
+                    <strong>⚡ وقت الإعداد:</strong> أقل من 4 ساعات (الإدارة الكاملة قد تستغرق 24 ساعة) | <strong>📍 الموقع:</strong> Phoenix, Arizona, USA | <strong>🔄 استرداد الأموال:</strong> 7 أيام
+                </div>
+            </div>
+            
+            <!-- Agora.io Section -->
+            <div class="section">
+                <div class="section-title">📹 خدمات الاتصال الفوري - Agora.io</div>
+                
+                <div class="subsection-title">مكالمات الفيديو عالية الدقة (HD Video)</div>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>الاستخدام</th>
+                            <th>الدقائق</th>
+                            <th>التكلفة</th>
+                            <th>مناسب لـ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge badge-new">خفيف</span></td>
+                            <td>1,000 دقيقة</td>
+                            <td><span class="price-tag">$3.99</span></td>
+                            <td>~33 ساعة (مشروع صغير)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-popular">متوسط</span></td>
+                            <td>5,000 دقيقة</td>
+                            <td><span class="price-tag">$19.95</span></td>
+                            <td>~83 ساعة (مشروع متوسط)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-premium">مكثف</span></td>
+                            <td>10,000 دقيقة</td>
+                            <td><span class="price-tag">$39.90</span></td>
+                            <td>~167 ساعة (استخدام عالي)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-premium">احترافي</span></td>
+                            <td>50,000 دقيقة</td>
+                            <td><span class="price-tag">$199.50</span></td>
+                            <td>~833 ساعة (مشروع كبير)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="info-box">
+                    <strong>💡 ملاحظة:</strong> السعر الأساسي $3.99 لكل 1,000 دقيقة فيديو HD | مناسب للاستشارات الطبية والتطبيقات الصحية
+                </div>
+            </div>
+            
+            <!-- Scenarios Section -->
+            <div class="section">
+                <div class="section-title">📋 السيناريوهات الكاملة - أمثلة واقعية</div>
+                
+                <div class="comparison-grid">
+                    <!-- Scenario 1: Startup -->
+                    <div class="scenario-box">
+                        <div class="scenario-title">🚀 سيناريو 1: مشروع ناشئ صغير</div>
+                        <div class="scenario-item">
+                            <span>VPS Basic (شهري)</span>
+                            <span>$9.88</span>
+                        </div>
+                        <div class="scenario-item">
+                            <span>Webuzo (لوحة تحكم)</span>
+                            <span>$2.88</span>
+                        </div>
+                        <div class="scenario-item">
+                            <span>Agora.io (1,000 دقيقة)</span>
+                            <span>$3.99</span>
+                        </div>
+                        <div class="scenario-item">
+                            <strong>الإجمالي الشهري:</strong>
+                            <strong style="color: #667eea; font-size: 1.3em;">$16.75</strong>
+                        </div>
+                        <div class="scenario-item">
+                            <strong>الإجمالي السنوي:</strong>
+                            <strong style="color: #764ba2; font-size: 1.3em;">$201.00</strong>
+                        </div>
+                    </div>
+                    
+                    <!-- Scenario 2: Growing Business -->
+                    <div class="scenario-box">
+                        <div class="scenario-title">📈 سيناريو 2: مشروع متنامي</div>
+                        <div class="scenario-item">
+                            <span>VPS Standard (شهري)</span>
+                            <span>$15.88</span>
+                        </div>
+                        <div class="scenario-item">
+                            <span>cPanel (لوحة تحكم)</span>
+                            <span>$16.88</span>
+                        </div>
+                        <div class="scenario-item">
+                            <span>RAM إضافية (2 GB)</span>
+                            <span>$14.00</span>
+                        </div>
+                        <div class="scenario-item">
+                            <span>IP إضافي</span>
+                            <span>$4.00</span>
+                        </div>
+                        <div class="scenario-item">
+                            <span>Agora.io (5,000 دقيقة)</span>
+                            <span>$19.95</span>
+                        </div>
+                        <div class="scenario-item">
+                            <strong>الإجمالي الشهري:</strong>
+                            <strong style="color: #667eea; font-size: 1.3em;">$70.71</strong>
+                        </div>
+                        <div class="scenario-item">
+                            <strong>الإجمالي السنوي:</strong>
+                            <strong style="color: #764ba2; font-size: 1.3em;">$848.52</strong>
+                        </div>
+                    </div>
+                    
+                    <!-- Scenario 3: Enterprise -->
+                    <div class="scenario-box">
+                        <div class="scenario-title">🏢 سيناريو 3: شركة متقدمة</div>
+                        <div class="scenario-item">
+                            <span>Dedicated Server (متقدم)</span>
+                            <span>$290.88</span>
+                        </div>
+                        <div class="scenario-item">
+                            <span>cPanel/WHM</span>
+                            <span>$17.88</span>
+                        </div>
+                        <div class="scenario-item">
+                            <span>إدارة كاملة</span>
+                            <span>$50.00</span>
+                        </div>
+                        <div class="scenario-item">
+                            <span>Agora.io (50,000 دقيقة)</span>
+                            <span>$199.50</span>
+                        </div>
+                        <div class="scenario-item">
+                            <strong>الإجمالي الشهري:</strong>
+                            <strong style="color: #667eea; font-size: 1.3em;">$558.26</strong>
+                        </div>
+                        <div class="scenario-item">
+                            <strong>الإجمالي السنوي:</strong>
+                            <strong style="color: #764ba2; font-size: 1.3em;">$6,699.12</strong>
+                        </div>
+                    </div>
+                    
+                    <!-- Scenario 4: Budget VPS -->
+                    <div class="scenario-box">
+                        <div class="scenario-title">💰 سيناريو 4: اقتصادي (VPS سنوي)</div>
+                        <div class="scenario-item">
+                            <span>VPS Basic (سنوي)</span>
+                            <span>$82.56/سنة</span>
+                        </div>
+                        <div class="scenario-item">
+                            <span>Webuzo × 12 شهر</span>
+                            <span>$34.56</span>
+                        </div>
+                        <div class="scenario-item">
+                            <span>Agora.io × 12 شهر (1,000)</span>
+                            <span>$47.88</span>
+                        </div>
+                        <div class="scenario-item">
+                            <strong>الإجمالي السنوي:</strong>
+                            <strong style="color: #10b981; font-size: 1.3em;">$165.00</strong>
+                        </div>
+                        <div class="scenario-item">
+                            <strong>وفرت:</strong>
+                            <strong style="color: #f59e0b;">$36.00</strong>
+                        </div>
+                    </div>
+                    
+                    <!-- Scenario 5: Medical Platform -->
+                    <div class="scenario-box">
+                        <div class="scenario-title">🏥 سيناريو 5: منصة طبية متكاملة</div>
+                        <div class="scenario-item">
+                            <span>VPS Advanced (شهري)</span>
+                            <span>$28.88</span>
+                        </div>
+                        <div class="scenario-item">
+                            <span>cPanel</span>
+                            <span>$16.88</span>
+                        </div>
+                        <div class="scenario-item">
+                            <span>RAM إضافية (4 GB)</span>
+                            <span>$28.00</span>
+                        </div>
+                        <div class="scenario-item">
+                            <span>تخزين إضافي (20 GB)</span>
+                            <span>$6.00</span>
+                        </div>
+                        <div class="scenario-item">
+                            <span>نطاق ترددي (200 GB)</span>
+                            <span>$20.00</span>
+                        </div>
+                        <div class="scenario-item">
+                            <span>Agora.io (10,000 دقيقة)</span>
+                            <span>$39.90</span>
+                        </div>
+                        <div class="scenario-item">
+                            <strong>الإجمالي الشهري:</strong>
+                            <strong style="color: #667eea; font-size: 1.3em;">$139.66</strong>
+                        </div>
+                        <div class="scenario-item">
+                            <strong>الإجمالي السنوي:</strong>
+                            <strong style="color: #764ba2; font-size: 1.3em;">$1,675.92</strong>
+                        </div>
+                    </div>
+                    
+                    <!-- Scenario 6: Dedicated Basic -->
+                    <div class="scenario-box">
+                        <div class="scenario-title">⚡ سيناريو 6: خادم مخصص أساسي</div>
+                        <div class="scenario-item">
+                            <span>Dedicated Server (أساسي)</span>
+                            <span>$44.88</span>
+                        </div>
+                        <div class="scenario-item">
+                            <span>Webuzo</span>
+                            <span>$5.88</span>
+                        </div>
+                        <div class="scenario-item">
+                            <span>إدارة أساسية</span>
+                            <span>$20.00</span>
+                        </div>
+                        <div class="scenario-item">
+                            <span>Agora.io (5,000 دقيقة)</span>
+                            <span>$19.95</span>
+                        </div>
+                        <div class="scenario-item">
+                            <strong>الإجمالي الشهري:</strong>
+                            <strong style="color: #667eea; font-size: 1.3em;">$90.71</strong>
+                        </div>
+                        <div class="scenario-item">
+                            <strong>الإجمالي السنوي:</strong>
+                            <strong style="color: #764ba2; font-size: 1.3em;">$1,088.52</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Comparison -->
+            <div class="section">
+                <div class="section-title">⚖️ مقارنة سريعة - أيهما أنسب لك؟</div>
+                
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>السيناريو</th>
+                            <th>مناسب لـ</th>
+                            <th>الشهري</th>
+                            <th>السنوي</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>🚀 مشروع ناشئ</td>
+                            <td>مواقع صغيرة، تطبيقات بسيطة</td>
+                            <td><span class="price-tag">$16.75</span></td>
+                            <td><span class="price-tag">$201.00</span></td>
+                        </tr>
+                        <tr>
+                            <td>📈 مشروع متنامي</td>
+                            <td>مواقع متوسطة، زيارات معتدلة</td>
+                            <td><span class="price-tag">$70.71</span></td>
+                            <td><span class="price-tag">$848.52</span></td>
+                        </tr>
+                        <tr>
+                            <td>💰 اقتصادي سنوي</td>
+                            <td>ميزانية محدودة، التزام طويل</td>
+                            <td><span class="price-tag">-</span></td>
+                            <td><span class="price-tag">$165.00</span></td>
+                        </tr>
+                        <tr>
+                            <td>🏥 منصة طبية</td>
+                            <td>تطبيقات صحية، استشارات</td>
+                            <td><span class="price-tag">$139.66</span></td>
+                            <td><span class="price-tag">$1,675.92</span></td>
+                        </tr>
+                        <tr>
+                            <td>⚡ خادم مخصص أساسي</td>
+                            <td>مشاريع تحتاج موارد مخصصة</td>
+                            <td><span class="price-tag">$90.71</span></td>
+                            <td><span class="price-tag">$1,088.52</span></td>
+                        </tr>
+                        <tr>
+                            <td>🏢 شركة متقدمة</td>
+                            <td>مؤسسات كبيرة، أداء عالي</td>
+                            <td><span class="price-tag">$558.26</span></td>
+                            <td><span class="price-tag">$6,699.12</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Price Calculator -->
+            <div class="section">
+                <div class="section-title">🧮 حاسبة التكلفة التفصيلية</div>
+                
+                <div class="subsection-title">نطاقات الأسعار حسب المكونات</div>
+                
+                <div class="scenario-box">
+                    <h4 style="color: #667eea; margin-bottom: 15px;">📊 الاستضافة (VPS)</h4>
+                    <ul class="feature-list">
+                        <li>أقل سعر شهري: <strong>$9.88</strong> (VPS Basic)</li>
+                        <li>أعلى سعر شهري: <strong>$28.88</strong> (VPS Advanced)</li>
+                        <li>أقل سعر سنوي: <strong>$82.56</strong> (وفر $36.00)</li>
+                        <li>أعلى سعر سنوي: <strong>$298.56</strong> (وفر $47.00)</li>
+                    </ul>
+                </div>
+                
+                <div class="scenario-box">
+                    <h4 style="color: #667eea; margin-bottom: 15px;">🖥️ الخوادم المخصصة</h4>
+                    <ul class="feature-list">
+                        <li>خادم أساسي: <strong>$44.88/شهر</strong> ($538.56/سنة)</li>
+                        <li>خادم متقدم: <strong>$290.88/شهر</strong> ($3,490.56/سنة)</li>
+                        <li>مع إدارة أساسية: <strong>+$20/شهر</strong></li>
+                        <li>مع إدارة كاملة: <strong>+$50/شهر</strong></li>
+                    </ul>
+                </div>
+                
+                <div class="scenario-box">
+                    <h4 style="color: #667eea; margin-bottom: 15px;">🎛️ لوحات التحكم</h4>
+                    <ul class="feature-list">
+                        <li>Webuzo (VPS): <strong>$2.88/شهر</strong> ($34.56/سنة)</li>
+                        <li>cPanel (VPS): <strong>$16.88/شهر</strong> ($202.56/سنة)</li>
+                        <li>Webuzo (Dedicated): <strong>$5.88/شهر</strong> ($70.56/سنة)</li>
+                        <li>cPanel/WHM (Dedicated): <strong>$17.88/شهر</strong> ($214.56/سنة)</li>
+                    </ul>
+                </div>
+                
+                <div class="scenario-box">
+                    <h4 style="color: #667eea; margin-bottom: 15px;">📹 Agora.io (مكالمات الفيديو)</h4>
+                    <ul class="feature-list">
+                        <li>1,000 دقيقة (33 ساعة): <strong>$3.99</strong></li>
+                        <li>5,000 دقيقة (83 ساعة): <strong>$19.95</strong></li>
+                        <li>10,000 دقيقة (167 ساعة): <strong>$39.90</strong></li>
+                        <li>50,000 دقيقة (833 ساعة): <strong>$199.50</strong></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Total Summary -->
+            <div class="section">
+                <div class="section-title">💎 الملخص النهائي لجميع الاحتمالات</div>
+                
+                <div class="total-box">
+                    <h3>أقل تكلفة ممكنة</h3>
+                    <div class="total-amount">$165.00/سنة</div>
+                    <p style="margin-top: 10px; font-size: 1.1em;">VPS Basic (سنوي) + Webuzo + Agora.io Basic</p>
+                </div>
+                
+                <div class="total-box" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+                    <h3>تكلفة متوسطة موصى بها</h3>
+                    <div class="total-amount">$70.71/شهر</div>
+                    <p style="margin-top: 10px; font-size: 1.1em;">$848.52/سنة - للمشاريع المتنامية</p>
+                </div>
+                
+                <div class="total-box" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);">
+                    <h3>أعلى تكلفة (احترافية)</h3>
+                    <div class="total-amount">$558.26/شهر</div>
+                    <p style="margin-top: 10px; font-size: 1.1em;">$6,699.12/سنة - للشركات الكبيرة</p>
+                </div>
+            </div>
+            
+            <!-- Additional Info -->
+            <div class="section">
+                <div class="section-title">ℹ️ معلومات إضافية مهمة</div>
+                
+                <div class="scenario-box">
+                    <h4 style="color: #667eea; margin-bottom: 15px;">🎁 العروض والمميزات</h4>
+                    <ul class="feature-list">
+                        <li>نقل مجاني للمواقع (من cPanel إلى cPanel)</li>
+                        <li>نقل مجاني للخوادم المخصصة</li>
+                        <li>ضمان استرداد الأموال: 30 يوم (VPS) | 7 أيام (خوادم مخصصة)</li>
+                        <li>استضافة بريد إلكتروني مع فترة تجريبية 60 يوم</li>
+                        <li>50 شهادة SSL مجانية مع الاستضافة المشتركة</li>
+                        <li>نطاق مجاني للسنة الأولى (باقات معينة)</li>
+                    </ul>
+                </div>
+                
+                <div class="scenario-box">
+                    <h4 style="color: #667eea; margin-bottom: 15px;">⏱️ أوقات الإعداد</h4>
+                    <ul class="feature-list">
+                        <li>VPS: فوري إلى بضع دقائق</li>
+                        <li>خادم مخصص (عادي): أقل من 4 ساعات</li>
+                        <li>خادم مخصص (إدارة كاملة): حتى 24 ساعة</li>
+                        <li>نقل المواقع: يعتمد على حجم الموقع</li>
+                    </ul>
+                </div>
+                
+                <div class="scenario-box">
+                    <h4 style="color: #667eea; margin-bottom: 15px;">🔧 أنظمة التشغيل المتاحة</h4>
+                    <ul class="feature-list">
+                        <li>AlmaLinux (موصى به)</li>
+                        <li>Ubuntu (شائع للمطورين)</li>
+                        <li>Debian (مستقر وآمن)</li>
+                        <li>CloudLinux (مع cPanel)</li>
+                    </ul>
+                </div>
+                
+                <div class="scenario-box">
+                    <h4 style="color: #667eea; margin-bottom: 15px;">📍 موقع الخوادم</h4>
+                    <ul class="feature-list">
+                        <li>مركز بيانات PhoenixNAP</li>
+                        <li>Phoenix, Arizona, USA</li>
+                        <li>نطاق ترددي غير محدود (خوادم مخصصة)</li>
+                        <li>عناوين IPv4 مضمنة</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Recommendations -->
+            <div class="section">
+                <div class="section-title">💡 التوصيات حسب نوع المشروع</div>
+                
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h3 style="color: #667eea; margin-bottom: 15px;">🌱 مشروع ناشئ / شخصي</h3>
+                        <p style="margin-bottom: 10px;"><strong>الحل الموصى به:</strong></p>
+                        <ul class="feature-list">
+                            <li>VPS Basic (سنوي للتوفير)</li>
+                            <li>Webuzo (اقتصادي)</li>
+                            <li>Agora.io: 1,000 دقيقة</li>
+                        </ul>
+                        <div style="margin-top: 15px; padding: 10px; background: #f0fdf4; border-radius: 8px;">
+                            <strong style="color: #10b981;">التكلفة: $165/سنة</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-card">
+                        <h3 style="color: #667eea; margin-bottom: 15px;">📊 شركة صغيرة - متوسطة</h3>
+                        <p style="margin-bottom: 10px;"><strong>الحل الموصى به:</strong></p>
+                        <ul class="feature-list">
+                            <li>VPS Standard أو Advanced</li>
+                            <li>cPanel (سهولة الإدارة)</li>
+                            <li>RAM وتخزين إضافي حسب الحاجة</li>
+                            <li>Agora.io: 5,000-10,000 دقيقة</li>
+                        </ul>
+                        <div style="margin-top: 15px; padding: 10px; background: #fef3c7; border-radius: 8px;">
+                            <strong style="color: #f59e0b;">التكلفة: $70-140/شهر</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-card">
+                        <h3 style="color: #667eea; margin-bottom: 15px;">🏢 مؤسسة كبيرة</h3>
+                        <p style="margin-bottom: 10px;"><strong>الحل الموصى به:</strong></p>
+                        <ul class="feature-list">
+                            <li>Dedicated Server (متقدم)</li>
+                            <li>cPanel/WHM</li>
+                            <li>إدارة كاملة (راحة تامة)</li>
+                            <li>Agora.io: 50,000+ دقيقة</li>
+                        </ul>
+                        <div style="margin-top: 15px; padding: 10px; background: #f5f3ff; border-radius: 8px;">
+                            <strong style="color: #8b5cf6;">التكلفة: $558/شهر</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-card">
+                        <h3 style="color: #667eea; margin-bottom: 15px;">⚕️ تطبيق طبي / صحي</h3>
+                        <p style="margin-bottom: 10px;"><strong>الحل الموصى به:</strong></p>
+                        <ul class="feature-list">
+                            <li>VPS Advanced (أمان عالي)</li>
+                            <li>cPanel</li>
+                            <li>موارد إضافية (RAM + Storage)</li>
+                            <li>Agora.io: 10,000+ دقيقة</li>
+                        </ul>
+                        <div style="margin-top: 15px; padding: 10px; background: #ecfdf5; border-radius: 8px;">
+                            <strong style="color: #059669;">التكلفة: $140/شهر</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <div style="text-align: center; padding: 30px; background: #f9fafb; border-radius: 12px; margin-top: 30px;">
+                <h3 style="color: #667eea; margin-bottom: 15px;">📞 للمزيد من المعلومات</h3>
+                <p style="margin: 10px 0;"><strong>Namecheap VPS:</strong> https://www.namecheap.com/hosting/vps/</p>
+                <p style="margin: 10px 0;"><strong>Namecheap Dedicated:</strong> https://www.namecheap.com/hosting/dedicated-servers/</p>
+                <p style="margin: 10px 0;"><strong>Agora.io:</strong> خدمات الاتصال الفوري WebRTC</p>
+                <p style="margin-top: 20px; color: #6b7280; font-size: 0.9em;">
+                    تم إعداد هذا المستند بناءً على الأسعار الحالية - قد تتغير الأسعار، يُرجى التحقق من المواقع الرسمية
+                </p>
+            </div>
+            
+            <button class="print-btn" onclick="window.print()">🖨️ طباعة أو حفظ كـ PDF</button>
+        </div>
+    </div>
+</body>
+</html>
